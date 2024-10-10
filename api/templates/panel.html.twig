@@ -1,0 +1,7 @@
+{% include 'head.html.twig' %}
+{% if not login %}
+{% include 'form_login.html.twig' %}
+{% else %}
+{% include 'dashboard.html.twig' with {'user_name': user_name} %}
+{% endif %}
+{% include 'food.html.twig' %}
