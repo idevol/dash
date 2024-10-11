@@ -32,14 +32,19 @@ tooling:
     service: dash
   php:
     service: dash
+    dir: /app/api
   composer:
     service: dash
+    dir: /app/api
   node:
     service: dash
+    dir: /app/web
   npm:
     service: dash
+    dir: /app/web
   npx:
     service: dash
+    dir: /app/web
   front-dev:
     service: dash
     dir: /app/web
