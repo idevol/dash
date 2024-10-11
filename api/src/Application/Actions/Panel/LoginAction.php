@@ -27,13 +27,13 @@ class LoginAction extends PanelAction
         else if (isset($data['user'], $data['password'])){
             // $user = User::create([
             //     'user' => $data['user'],
-            //     'password' => password_hash($data['password'].$_ENV['XXI_SALT'], PASSWORD_BCRYPT, ['cost'=>12])
+            //     'password' => password_hash($data['password'].$_ENV['DASH_SALT'], PASSWORD_BCRYPT, ['cost'=>12])
             // ]);
             // $user->save();
             // $this->logger->info('User create');
 
             $user = User::where('user', $data['user'])->first();
-            if (password_verify($data['password'].$_ENV['XXI_SALT'], $user->password)) {
+            if (password_verify($data['password'].$_ENV['DASH_SALT'], $user->password)) {
                 $login = true;
                 $user_name = $user->user;
                 $_SESSION['is_login'] = true;
