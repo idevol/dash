@@ -1,7 +1,7 @@
 <?php
-namespace DB\Events;
+namespace App\DB\Events;
 
-use DB\Models\Pincode;
+use App\DB\Models\Pincode;
 
 class PincodeDeleting
 {

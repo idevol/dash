@@ -5,7 +5,7 @@ declare(strict_types=1);
 namespace App\Application\Actions\Panel;
 
 use Psr\Http\Message\ResponseInterface as Response;
-use DB\Models\User;
+use App\DB\Models\User;
 
 class LogoutAction extends PanelAction
 {

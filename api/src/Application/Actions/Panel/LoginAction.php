@@ -6,7 +6,7 @@ namespace App\Application\Actions\Panel;
 
 use Psr\Http\Message\ResponseInterface as Response;
 use Slim\Views\Twig;
-use DB\Models\User;
+use App\DB\Models\User;
 
 class LoginAction extends PanelAction
 {
