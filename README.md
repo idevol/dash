@@ -1,66 +1,7 @@
 # idEvol Dashboard
 Surge como una prueba de concepto didáctica, más cercana a un MVP, para identificar los alcances de las tecnologías utilizadas y comprobar la armonía entre ellas, con el propósito de que llegue a evolucionar a el esqueleto de una aplicación Fullstack.
 
-## Requerimientos
-**Ambiente de desarrollo**:
-- Docker 4.34
-- Lando 3.22
-
-**Backend**:
-- Apache 2.4
-- PHP 8.3
-- Slim Framework 4
-- Composer 2
-
-Dependencias:
-- illuminate/database ^11.27
-- illuminate/events ^11.27
-- monolog/monolog ^2.9
-- php-di/php-di ^6.4
-- pug-php/pug ^3.5
-- slim/psr7 ^1.7
-- slim/slim ^4.14
-- slim/twig-view ^3.4
-- vlucas/phpdotenv ^5.6
-
-Dependencias en desarrollo:
-- jangregor/phpstan-prophecy ^1.0.2
-- phpspec/prophecy-phpunit ^2.2
-- phpstan/extension-installer ^1.4
-- phpstan/phpstan ^1.12
-- phpunit/phpunit ^9.6.21
-- squizlabs/php_codesniffer ^3.10
-
-**Frontend**:
-- Node 20
-- Vite 5
-- TypeScript 5.6
-- React 18.3
-- NPM
-
-Dependencias:
-- @tailwindcss/forms ^0.5.9
-- chart.js ^4.4.4
-- chartjs-adapter-moment ^1.0.1
-- moment ^2.30.1
-- react ^18.3.1
-- react-dom ^18.3.1
-- react-flatpickr ^3.10.13
-- react-icons ^5.3.0
-- react-router-dom ^6.24.1
-- react-transition-group ^4.4.5
-
-Dependencias en desarrollo:
-- @types/node ^22.7.5
-- @types/react ^18.3.11
-- @types/react-dom ^18.3.0
-- @types/react-transition-group ^4.4.11
-- @vitejs/plugin-react ^4.3.2
-- autoprefixer ^10.4.20
-- postcss ^8.4.47
-- tailwindcss ^3.4.13
-- typescript ^5.6.3
-- vite ^5.4.8
+- (Requerimientos)[docs/requirements.md]
 
 ## Backend
 El _backend_ de la aplicación se encuentra en el directorio `api/` del proyecto. El _backend_ esta desarrollado en [_PHP_ 8.3](https://www.php.net/releases/8.3/es.php) con el framework [_Slim 4_](https://www.slimframework.com/docs/v4/) y como gestor de dependencias se utiliza [_Composer 2_](https://getcomposer.org/doc/00-intro.md).
@@ -100,6 +41,7 @@ Para instalar _Lando_ en _macOS_ siga las siguientes instrucciones:
 ### Archivos de configuración del ambiente de desarrollo
 En el directorio `lando/` se encuentran los archivos de configuración necesarios para el correcto despliegue del ambiente de desarrollo por medio de _Lando_.
 
+### Despliegue local de la aplicación 
 Una vez teniendo instalado _Docker_ y _Lando_ en su computadora podrá iniciar el ambiente de desarrollo con el siguiente comando:
 ```bash
 lando start
@@ -110,9 +52,9 @@ Al iniciar o levantar el contenedor de _Docker_ con el ambiente de desarrollo po
 ```bash
 lando front-dev
 ```
-Con el comando `lando front-dev` inicializará el servicio _HTTP_ de _Vite_ con la _URL_ `http://localhost:5173/` donde podrá ver los cambios aplicados en las páginas del frontend.
+Con el comando `lando front-dev` inicializará el servicio _HTTP_ de _Vite_ con la _URL_ `http://localhost:5173/` donde podrá ver los cambios aplicados en las páginas del frontend. Este comando es un alias del comando `npm vite` dentro de la ruta `web/`.
 
 ```bash
 lando front-build
 ```
-Con el comando `lando front-build` construirá con _Vite_ el frontend en la ruta `/web/dist/` del proyecto.
+Con el comando `lando front-build` construirá con _Vite_ el frontend en la ruta `web/dist/` del proyecto. Este comando es un alias del comando `npm vite build` en la ruta `web/`.
