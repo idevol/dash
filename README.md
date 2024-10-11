@@ -1,7 +1,7 @@
 # idEvol Dashboard
 Surge como una prueba de concepto didáctica, más cercana a un MVP, para identificar los alcances de las tecnologías utilizadas y comprobar la armonía entre ellas, con el propósito de que llegue a evolucionar a el esqueleto de una aplicación Fullstack.
 
-- (Requerimientos)[docs/requirements.md]
+- [Requerimientos](docs/requirements.md)
 
 ## Backend
 El _backend_ de la aplicación se encuentra en el directorio `api/` del proyecto. El _backend_ esta desarrollado en [_PHP_ 8.3](https://www.php.net/releases/8.3/es.php) con el framework [_Slim 4_](https://www.slimframework.com/docs/v4/) y como gestor de dependencias se utiliza [_Composer 2_](https://getcomposer.org/doc/00-intro.md).
