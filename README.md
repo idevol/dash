@@ -2,11 +2,11 @@
 Surge como una prueba de concepto didáctica, más cercana a un MVP, para identificar los alcances de las tecnologías utilizadas y comprobar la armonía entre ellas, con el propósito de que llegue a evolucionar a el esqueleto de una aplicación Fullstack.
 
 ## Requerimientos
-*Ambiente de desarrollo*:
+**Ambiente de desarrollo**:
 - Docker 4.34
 - Lando 3.22
 
-*Backend*:
+**Backend**:
 - Apache 2.4
 - PHP 8.3
 - Slim Framework 4
@@ -31,7 +31,7 @@ Dependencias en desarrollo:
 - phpunit/phpunit ^9.5.26
 - squizlabs/php_codesniffer ^3.7
 
-*Frontend*:
+**Frontend**:
 - Node 20
 - Vite 5
 - TypeScript 5.6
