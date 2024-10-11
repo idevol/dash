@@ -5,6 +5,8 @@ order allow,deny
 deny from all
 </Files>
 
+SetEnvIf Authorization "(.*)" HTTP_AUTHORIZATION=$1
+
 <IfModule mod_rewrite.c>
   RewriteEngine On
 
