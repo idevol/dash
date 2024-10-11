@@ -11,23 +11,25 @@ Surge como una prueba de concepto didáctica, más cercana a un MVP, para identi
 - PHP 8.3
 - Slim Framework 4
 - Composer 2
+
 Dependencias:
-    - illuminate/database ^11.26
-    - illuminate/events ^11.26
-    - monolog/monolog ^2.8
-    - php-di/php-di ^6.4
-    - pug-php/pug ^3.5
-    - slim/psr7 ^1.5
-    - slim/slim ^4.10
-    - slim/twig-view ^3.4
-    - vlucas/phpdotenv ^5.6
+- illuminate/database ^11.26
+- illuminate/events ^11.26
+- monolog/monolog ^2.8
+- php-di/php-di ^6.4
+- pug-php/pug ^3.5
+- slim/psr7 ^1.5
+- slim/slim ^4.10
+- slim/twig-view ^3.4
+- vlucas/phpdotenv ^5.6
+
 Dependencias en desarrollo:
-    - jangregor/phpstan-prophecy ^1.0.0
-    - phpspec/prophecy-phpunit ^2.0
-    - phpstan/extension-installer ^1.2.0
-    - phpstan/phpstan ^1.8
-    - phpunit/phpunit ^9.5.26
-    - squizlabs/php_codesniffer ^3.7
+- jangregor/phpstan-prophecy ^1.0.0
+- phpspec/prophecy-phpunit ^2.0
+- phpstan/extension-installer ^1.2.0
+- phpstan/phpstan ^1.8
+- phpunit/phpunit ^9.5.26
+- squizlabs/php_codesniffer ^3.7
 
 *Frontend*:
 - Node 20
@@ -35,28 +37,30 @@ Dependencias en desarrollo:
 - TypeScript 5.6
 - React 18.3
 - NPM
+
 Dependencias:
-    - @tailwindcss/forms ^0.5.7
-    - chart.js ^4.4.1
-    - chartjs-adapter-moment ^1.0.1
-    - moment ^2.29.4
-    - react ^18.2.0
-    - react-dom ^18.2.0
-    - react-flatpickr ^3.10.13
-    - react-icons ^5.3.0
-    - react-router-dom ^6.20.1
-    - react-transition-group ^4.4.5
+- @tailwindcss/forms ^0.5.7
+- chart.js ^4.4.1
+- chartjs-adapter-moment ^1.0.1
+- moment ^2.29.4
+- react ^18.2.0
+- react-dom ^18.2.0
+- react-flatpickr ^3.10.13
+- react-icons ^5.3.0
+- react-router-dom ^6.20.1
+- react-transition-group ^4.4.5
+
 Dependencias en desarrollo:
-    - @types/node ^22.7.5
-    - @types/react ^18.3.11
-    - @types/react-dom ^18.3.0
-    - @types/react-transition-group ^4.4.11
-    - @vitejs/plugin-react ^4.2.1
-    - autoprefixer ^10.4.16
-    - postcss ^8.4.32
-    - tailwindcss ^3.3.6
-    - typescript ^5.6.2
-    - vite ^5.0.6
+- @types/node ^22.7.5
+- @types/react ^18.3.11
+- @types/react-dom ^18.3.0
+- @types/react-transition-group ^4.4.11
+- @vitejs/plugin-react ^4.2.1
+- autoprefixer ^10.4.16
+- postcss ^8.4.32
+- tailwindcss ^3.3.6
+- typescript ^5.6.2
+- vite ^5.0.6
 
 ## Backend
 El _backend_ de la aplicación se encuentra en el directorio `api/` del proyecto. El _backend_ esta desarrollado en [_PHP_ 8.3](https://www.php.net/releases/8.3/es.php) con el framework [_Slim 4_](https://www.slimframework.com/docs/v4/) y como gestor de dependencias se utiliza [_Composer 2_](https://getcomposer.org/doc/00-intro.md).
