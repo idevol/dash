@@ -10,8 +10,11 @@ use Illuminate\Database\Capsule\Manager as Capsule;
 
 abstract class PanelAction extends Action
 {
+    protected Capsule $capsule;
+
     public function __construct(LoggerInterface $logger, Capsule $capsule)
     {
-        parent::__construct($logger, $capsule);
+        parent::__construct($logger);
+        $this->capsule = $capsule;
     }
 }
