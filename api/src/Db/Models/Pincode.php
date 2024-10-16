@@ -1,11 +1,11 @@
 <?php
 
-namespace App\DB\Models;
+namespace App\Db\Models;
 
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\SoftDeletes;
 
-use App\DB\Events\PincodeDeleting;
+use App\Db\Events\PincodeDeleting;
 
 class Pincode extends Model
 {
