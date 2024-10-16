@@ -28,8 +28,8 @@ return function (ContainerBuilder $containerBuilder) {
 
             return $logger;
         },
-        Capsule::class => function (ContainerInterface $container) {
-            $factory = new DatabaseManagerFactory($container);
+        Capsule::class => function () {
+            $factory = new DatabaseManagerFactory();
             return new $factory->capsule;
         }
     ]);

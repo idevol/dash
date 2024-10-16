@@ -4,12 +4,12 @@ namespace App\Db\Models;
 
 use Illuminate\Database\Eloquent\Model;
 
-class User extends Model
+class UserInfo extends Model
 {
     protected $primaryKey = 'id';
 
     protected $fillable = [
-        'username', 'password'
+        'user_id', 'email'
     ];
 
     protected $dateFormat = 'U';

@@ -24,29 +24,11 @@ class LoginAction extends PanelAction
             $user_name = $_SESSION['user_name'];
         }
         else if (isset($data['user'], $data['password'])){
-
-//            $user = $this->capsule->
-//                    table('users')->firstOrNew([
-//                        'user' => $data['user'],
-//                    ]);
-//            if ($user->exists) {
-//                $this->logger->info('User exists');
-//            } else {
-//                $user->password = password_hash($data['password'].$_ENV['DASH_SALT'], PASSWORD_BCRYPT, ['cost'=>12]);
-//                $user->save();
-//                $this->logger->info('User create');
-//            }
-
-            $user = $this->capsule->
-                    table('users')->
-                    select('user', 'password')->
-                    where('user', $data['user'])->
-                    first();
-            if ($user != null && password_verify($data['password'].$_ENV['DASH_SALT'], $user->password)) {
+            if ($this->userRepository->setUser($data['user'], $data['password'])->login()) {
                 $login = true;
-                $user_name = $user->user;
+                $user_name = $data['user'];
                 $_SESSION['is_login'] = true;
-                $_SESSION['user_name'] = $user->user;
+                $_SESSION['user_name'] = $data['user'];
                 $this->logger->info('User login');
             }
         }

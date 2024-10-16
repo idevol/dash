@@ -7,13 +7,12 @@ namespace App\Application\Factory;
 use Illuminate\Container\Container;
 use Illuminate\Database\Capsule\Manager;
 use Illuminate\Events\Dispatcher;
-use Psr\Container\ContainerInterface;
 
 class DatabaseManagerFactory
 {
-    public $capsule;
+    public Manager $capsule;
 
-    public function __construct(ContainerInterface $container)
+    public function __construct()
     {
          // this would usually be in your dependency settings or on a safe place within 
          // your application. This is purely for explanatory reasons that is has been placed here
