@@ -2,6 +2,7 @@
 Surge como una prueba de concepto didáctica, más cercana a un MVP, para identificar los alcances de las tecnologías utilizadas y comprobar la armonía entre ellas, con el propósito de que llegue a evolucionar como esqueleto de una aplicación Fullstack.
 
 - [Requerimientos](docs/requirements.md)
+- [Base de datos](docs/database.md)
 
 ## Backend
 El _backend_ de la aplicación se encuentra en el directorio `api/` del proyecto. El _backend_ está desarrollado en [_PHP_ 8.3](https://www.php.net/releases/8.3/es.php) con el framework [_Slim 4_](https://www.slimframework.com/docs/v4/) y como gestor de dependencias se utiliza [_Composer 2_](https://getcomposer.org/doc/00-intro.md).
@@ -51,7 +52,11 @@ El contenido del archivo `api/.env` sería similar a:
 DASH_SALT=F_ODS5EE0V,PAA*:qYsNr.
 DASH_INIT_VECTOR=gpdHTB+o.DRnqLlK5AzKA
 ```
-**Atención**: Por seguridad define en tus entornos diferentes cadenas aleatorias.
+**Atención**: Por seguridad defina en sus entornos (desarrollo, pruebas y producción) diferentes cadenas aleatorias.
+
+### Creación de la base de datos
+Siga las instrucciones de [aqui](docs/database.md) para crear una nueva base de datos.
+
 ### Despliegue local de la aplicación 
 Una vez teniendo instalado _Docker_ y _Lando_ en su computadora podrá iniciar el ambiente de desarrollo con el siguiente comando:
 ```bash
