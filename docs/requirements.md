@@ -41,24 +41,24 @@ Aun no se ha probado el despliegue de la aplicación en _Windows_ utilizando [_X
 
 ### Dependencias del frontend
 - @tailwindcss/forms ^0.5.9
-- chart.js ^4.4.4
+- chart.js ^4.4.5
 - chartjs-adapter-moment ^1.0.1
 - moment ^2.30.1
 - react ^18.3.1
 - react-dom ^18.3.1
 - react-flatpickr ^3.10.13
 - react-icons ^5.3.0
-- react-router-dom ^6.24.1
+- react-router-dom ^6.27.0
 - react-transition-group ^4.4.5
 
 ### Dependencias en desarrollo del frontend
-- @types/node ^22.7.5
+- @types/node ^22.7.6
 - @types/react ^18.3.11
-- @types/react-dom ^18.3.0
+- @types/react-dom ^18.3.1
 - @types/react-transition-group ^4.4.11
 - @vitejs/plugin-react ^4.3.2
 - autoprefixer ^10.4.20
 - postcss ^8.4.47
-- tailwindcss ^3.4.13
+- tailwindcss ^3.4.14
 - typescript ^5.6.3
-- vite ^5.4.8
+- vite ^5.4.9
