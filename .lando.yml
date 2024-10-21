@@ -14,19 +14,17 @@ services:
       - 9003:9003 # Xdebug port
     xdebug: debug
     build_as_root:
-      - . /app/lando/scripts/xdebug-setup.sh
-      # Note that you will want to use the script for the major version of node you want to install
-      # See: https://github.com/nodesource/distributions/blob/master/README.md#installation-instructions
-      - curl -fsSL https://deb.nodesource.com/setup_20.x | bash -
-      - apt-get install -y nodejs
-      - . /app/lando/scripts/dependencies-install.sh
+      - . /app/lando/scripts/01-setup-xdebug.sh
+      - . /app/lando/scripts/02-install-node.sh
     config:
       php: lando/config/php/php.ini
       vhosts: lando/config/apache/vhosts.conf
 events:
   post-start:
-    #- dash: . /app/lando/scripts/setup-env-files.sh
-    - dash: . /app/lando/scripts/frontend-build.sh
+    #- dash: . /app/lando/scripts/03-setup-env-files.sh
+    - dash: . /app/lando/scripts/04-api-install-composer-dependencies.sh
+    - dash: . /app/lando/scripts/05-frontend-dependencies-install.sh
+    - dash: . /app/lando/scripts/06-frontend-build.sh
 tooling:
   printenv:
     service: dash
