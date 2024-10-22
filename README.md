@@ -15,6 +15,13 @@ Para el ambiente de desarrollo se utiliza un contenedor en [_Docker_](https://ww
   Para instalar _Lando_ en _macOS_.
 
 ### Archivos de configuración del ambiente de desarrollo
+El archivo `.lando.yml` es en donde se declara las características del contenedor en _Docker_ orquestado por _Lando_. En los siguientes enlaces podrá tener mayor contexto de la declaración de esté archivo:
+
+- [Lando PHP introduction](https://docs.lando.dev/plugins/php/)
+- [Lando PHP configuration](https://docs.lando.dev/plugins/php/config.html)
+- [PHP Lando Plugin](https://github.com/lando/php?tab=readme-ov-file#php-lando-plugin)
+- [Installing Node in Your Lando PHP Service](https://github.com/lando/php/blob/main/docs/guides/installing-node.md#installing-node-in-your-lando-php-service)
+
 En el directorio `lando/` se encuentran los archivos de configuración necesarios para el correcto despliegue del ambiente de desarrollo por medio de _Lando_.
 
 ### Definición de variables de entorno
