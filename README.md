@@ -63,6 +63,14 @@ Una vez teniendo instalado _Docker_ y _Lando_ en su computadora podrá iniciar e
 lando start
 ```
 
+Una vez haya iniciado el contenedor de _Docker_ orquestado por _Lando_ podrá tener acceso a las _URL's_:
+- http://dash.lndo.site:8080/ \
+  Esta _URL_ muestra el _frontend_ de la aplicación, compilado por _Vite_ en el directorio `web/dist/`.\
+  Puede ver las rutas declaradas de la aplicación _frontend_ en el archivo `web/src/App.tsx`.
+- http://dash.lndo.site:8080/api/ \
+  En esta _URL_ es en donde iniciara los _endpoint_ de la _API_ de la aplicación, muestra lo publicado en el directorio `api/public/`.\
+  En el el archivo `api/app/routes.php` podrá ver las _URI_ de los _endpoints_ declarados de la _API_.
+
 Al iniciar o levantar el contenedor de _Docker_ con el ambiente de desarrollo por medio de _Lando_ podrá hacer uso de los siguientes comandos:
 
 ```bash
