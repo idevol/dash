@@ -33,7 +33,7 @@ Es necesario crear el archivo `.env` en el directorio `api/` y definir las varia
 
 El contenido del archivo `api/.env` sería similar a:
 ```bash
-DASH_SALT=F_ODS5EE0V,PAA*:qYsNr.
+DASH_SALT=F_ODS5EE0V,PAA_:qYsNr.
 DASH_INIT_VECTOR=gpdHTB+o.DRnqLlK5AzKA
 ```
 **Atención**: Por seguridad defina en sus entornos (desarrollo, pruebas y producción) diferentes cadenas aleatorias.
@@ -66,3 +66,10 @@ Con el comando `lando front-dev` inicializará el servicio _HTTP_ de _Vite_ con 
 lando front-build
 ```
 Con el comando `lando front-build` construirá con _Vite_ el frontend en la ruta `web/dist/` del proyecto. Este comando es un alias del comando `npm vite build` en la ruta `web/`.
+
+### Solución de problemas
+Llega a pasar que cuando se inicia _Lando_ varias veces llega detenerse sin motivo aparente durante la contrucción del contenedor de _Docker_, mi recomendación para solucionar esté problema es borrar el cache de _Lando_ como lo indica en el siguiente enlace: [Purging Containers](https://docs.lando.dev/help/purging-containers.html).
+```bash
+lando poweroff && docker system prune -a --volumes && rm -rf ~/.lando/cache
+```
+También puede hacer uso de los _logs_ de _Lando_ para poder identificar la causa del problema que llegue a tener al construir el contenedor de _Docker_ en el siguiente enlace: [Accessing Logs](https://docs.lando.dev/help/logs.html).
