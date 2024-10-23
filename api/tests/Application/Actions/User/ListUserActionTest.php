@@ -19,7 +19,7 @@ class ListUserActionTest extends TestCase
         /** @var Container $container */
         $container = $app->getContainer();
 
-        $user = new User(1, 'bill.gates', 'Bill', 'Gates');
+        $user = new User('bill.gates', '$4y$32$Ny/iLjvqsoUIG50x8xr2cQKh0Dtr7xTszMjeJPAyaN9IZPleLl2O.', 1);
 
         $userRepositoryProphecy = $this->prophesize(UserRepository::class);
         $userRepositoryProphecy

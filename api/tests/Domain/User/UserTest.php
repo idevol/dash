@@ -9,7 +9,7 @@ use Tests\TestCase;
 
 class UserTest extends TestCase
 {
-    public function userProvider(): array
+    public static function userProvider(): array
     {
         return [
             [1, 'bill.gates', '$4y$32$Ny/iLjvqsoUIG50x8xr2cQKh0Dtr7xTszMjeJPAyaN9IZPleLl2O.'],
@@ -28,7 +28,7 @@ class UserTest extends TestCase
      */
     public function testGetters(int $id, string $username, string $password)
     {
-        $user = new User($id, $username, $password);
+        $user = new User($username, $password, $id);
 
         $this->assertEquals($id, $user->getId());
         $this->assertEquals($username, $user->getUsername());
@@ -43,12 +43,12 @@ class UserTest extends TestCase
      */
     public function testJsonSerialize(int $id, string $username, string $password)
     {
-        $user = new User($id, $username, $password);
+        $user = new User($username, $password, $id);
 
         $expectedPayload = json_encode([
             'id' => $id,
             'username' => $username,
-            'firstName' => $password,
+            'password' => $password,
         ]);
 
         $this->assertEquals($expectedPayload, json_encode($user));
