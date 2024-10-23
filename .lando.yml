@@ -21,10 +21,11 @@ services:
       vhosts: lando/config/apache/vhosts.conf
 events:
   post-start:
-    #- dash: . /app/lando/scripts/03-setup-env-files.sh
-    - dash: . /app/lando/scripts/04-api-install-composer-dependencies.sh
-    - dash: . /app/lando/scripts/05-frontend-dependencies-install.sh
-    - dash: . /app/lando/scripts/06-frontend-build.sh
+    - dash: . /app/lando/scripts/03-verify-development-environment.sh
+    #- dash: . /app/lando/scripts/04-setup-env-files.sh
+    - dash: . /app/lando/scripts/05-api-install-composer-dependencies.sh
+    - dash: . /app/lando/scripts/06-frontend-dependencies-install.sh
+    - dash: . /app/lando/scripts/07-frontend-build.sh
 tooling:
   printenv:
     service: dash
