@@ -14,7 +14,7 @@ services:
       - 9003:9003 # Xdebug port
     xdebug: debug
     build_as_root:
-      - . /app/lando/scripts/01-setup-xdebug.sh
+      - . /app/lando/scripts/01-setup-php-extensions.sh
       - . /app/lando/scripts/02-install-node.sh
     config:
       php: lando/config/php/php.ini
@@ -22,7 +22,7 @@ services:
 events:
   post-start:
     - dash: . /app/lando/scripts/03-verify-development-environment.sh
-    #- dash: . /app/lando/scripts/04-setup-env-files.sh
+    - dash: . /app/lando/scripts/04-setup-env-files.sh
     - dash: . /app/lando/scripts/05-api-install-composer-dependencies.sh
     - dash: . /app/lando/scripts/06-frontend-dependencies-install.sh
     - dash: . /app/lando/scripts/07-frontend-build.sh
