@@ -1,23 +1,48 @@
 #!/bin/bash
 
-CYAN='\033[0;36m'
+YELLOW='\033[0;33m'
 GREEN='\033[0;32m'
 NC='\033[0m' # No Color
-echo "\n${CYAN}Setup .env files on web/ and api/${NC}\n"
+
+echo "\n${YELLOW}Setup LANDO_URL on .env files of api/ and web/ directories${NC}\n"
+
+API_ENV_FILE=/app/api/.env
+WEB_ENV_FILE=/app/web/.env
 
 LANDO_URL=`php /app/lando/scripts/get-lando-url.php`
-echo "\nLANDO URL:\n${GREEN}${LANDO_URL}${NC}\n"
+DASH_HOST_ENV="DASH_HOST=${LANDO_URL}";
+echo "🚀 LANDO URL: ${GREEN}${LANDO_URL}${NC}\n"
 
-cd /app/api
-if [ ! -f /app/api/.env ]; then
-    cp /app/api/.env.localhost /app/api/.env
+if test -f "${API_ENV_FILE}"; then
+  cd /app/api
+  if grep -q "${DASH_HOST_ENV}" "${API_ENV_FILE}"; then
+    echo "✅ Declared \"${DASH_HOST_ENV}\" in \"api/.env\" file."
+  else
+    if grep -q "DASH_HOST" "${API_ENV_FILE}"; then
+      API_ENV_FILE_CONTENT=`while read -r line; do if echo "$line" | grep -q DASH_HOST; then echo "${DASH_HOST_ENV}"; else echo "$line"; fi; done < .env`
+      echo "${API_ENV_FILE_CONTENT}" > "${API_ENV_FILE}"
+    else
+      echo "\n${DASH_HOST_ENV}" >> "${API_ENV_FILE}"
+    fi
+    echo "✅ Setup \"${DASH_HOST_ENV}\" in \"api/.env\" file."
+  fi
+else
+  echo '❌ File "api/.env" not found.'
 fi
-API_ENV_FILE=`while read -r line; do if echo "$line" | grep -q DASH_API_HOST; then echo "DASH_API_HOST=${LANDO_URL}"; else echo "$line"; fi; done < .env`
-echo "${API_ENV_FILE}" > /app/api/.env
 
-cd /app/web
-if [ ! -f /app/web/.env ]; then
-    cp /app/web/.env.localhost /app/web/.env
+if test -f "${WEB_ENV_FILE}"; then
+  cd /app/web
+  if grep -q "${DASH_HOST_ENV}" "${WEB_ENV_FILE}"; then
+    echo "✅ Declared \"${DASH_HOST_ENV}\" in \"web/.env\" file."
+  else
+    if grep -q "DASH_HOST" "${WEB_ENV_FILE}"; then
+      WEB_ENV_FILE_CONTENT=`while read -r line; do if echo "$line" | grep -q DASH_HOST; then echo "${DASH_HOST_ENV}"; else echo "$line"; fi; done < .env`
+      echo "${WEB_ENV_FILE_CONTENT}" > "${WEB_ENV_FILE}"
+    else
+      echo "\n${DASH_HOST_ENV}" >> "${WEB_ENV_FILE}"
+    fi
+    echo "✅ Setup \"${DASH_HOST_ENV}\" in \"web/.env\" file."
+  fi
+else
+  echo '❌ File "web/.env" not found.'
 fi
-LANDING_PAGE_ENV_FILE=`while read -r line; do if echo "$line" | grep -q DASH_API_HOST; then echo "DASH_API_HOST=${LANDO_URL}"; else echo "$line"; fi; done < .env`
-echo "${LANDING_PAGE_ENV_FILE}" > /app/web/.env
