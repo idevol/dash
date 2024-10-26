@@ -1,4 +1,4 @@
-{% include 'head.html.twig' %}
+{% include 'head.html.twig' with {'DASH_HOST': DASH_HOST}  %}
 {% if not login %}
 {% include 'form_login.html.twig' %}
 {% else %}

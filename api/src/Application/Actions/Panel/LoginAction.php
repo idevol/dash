@@ -35,6 +35,7 @@ class LoginAction extends PanelAction
 
         $view = Twig::fromRequest($this->request);
         return $view->render($this->response, 'panel.html.twig', [
+            'DASH_HOST' => $_ENV['DASH_HOST'],
             'login' => $login,
             'user_name' => $user_name
         ]);
