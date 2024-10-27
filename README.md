@@ -7,12 +7,19 @@
 ## Despliegue del ambiente de desarrollo
 Para el ambiente de desarrollo se utiliza un contenedor en [_Docker_](https://www.docker.com/) orquestado con [_Lando_](https://docs.lando.dev/getting-started/).
 
+### Instalación de Docker y Lando
 - [Install Docker Engine](https://docs.docker.com/engine/install/)\
   Siga las instrucciones adecuadas para el sistema operativo que esté utilizando.
 - [Installing Lando using the PowerShell](https://docs.lando.dev/install/windows.html)\
   Para instalar _Lando_ en _Windows_.
 - [The macOS quickstart](https://docs.lando.dev/install/macos.html)\
   Para instalar _Lando_ en _macOS_.
+
+Una vez instalado _Lando_ en equipo ejecuté en terminal:
+```bash
+lando setup
+```
+Instalará los _plugins_ necesarios para correr la aplicación.
 
 ### Archivos de configuración del ambiente de desarrollo
 El archivo `.lando.yml` es en donde se declara las características del contenedor en _Docker_ orquestado por _Lando_. En los siguientes enlaces podrá tener mayor contexto de la declaración de esté archivo:
@@ -30,13 +37,25 @@ Es necesario crear el archivo `.env` en el directorio `api/` y definir las varia
   Cadena de texto aleatoria que se concatena a las contraseñas almacenadas.
 - `DASH_INIT_VECTOR`\
   Cadena de texto aleatoria que se utiliza como vector inicial en las funciones `openssl_encrypt` y `openssl_decrypt`
+- `DASH_HOST`\
+  URL del dominio en donde se encuentra la aplicación.
 
 El contenido del archivo `api/.env` sería similar a:
 ```bash
 DASH_SALT=F_ODS5EE0V,PAA_:qYsNr.
 DASH_INIT_VECTOR=gpdHTB+o.DRnqLlK5AzKA
+DASH_HOST=http://dash.lndo.site:8000
 ```
 **Atención**: Por seguridad defina en sus entornos (desarrollo, pruebas y producción) diferentes cadenas aleatorias.
+
+También es necesario crear el archivo `.env` en el directorio `web/` y definir la variable de entorno:
+- `VITE_DASH_HOST`\
+  URL del dominio en donde se encuentra la aplicación.
+
+El contenido del archivo `api/.env` sería similar a:
+```bash
+VITE_DASH_HOST=http://dash.lndo.site:8000
+```
 
 ### Creación de la base de datos
 Siga las instrucciones de [aquí](docs/database.md) para crear una nueva base de datos.
