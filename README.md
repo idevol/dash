@@ -92,3 +92,8 @@ Llega a pasar que cuando se inicia _Lando_ varias veces llega detenerse sin moti
 lando poweroff && docker system prune -a --volumes && rm -rf ~/.lando/cache
 ```
 También puede hacer uso de los _logs_ de _Lando_ para poder identificar la causa del problema que llegue a tener al construir el contenedor de _Docker_ en el siguiente enlace: [Accessing Logs](https://docs.lando.dev/help/logs.html).
+
+Con el siguiente comando podrá monitorear en tiempo real los eventos que suceden al iniciar el contenedor de _Docker_ con _Lando_:
+```bash
+tail -f ~/.lando/logs/idevoldash.log
+```
