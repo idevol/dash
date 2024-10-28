@@ -26,6 +26,7 @@ events:
     - dash: . /app/lando/scripts/05-api-install-composer-dependencies.sh
     - dash: . /app/lando/scripts/06-frontend-dependencies-install.sh
     - dash: . /app/lando/scripts/07-frontend-build.sh
+    - dash: . /app/lando/scripts/08-show-lando-urls.sh
 tooling:
   printenv:
     service: dash
