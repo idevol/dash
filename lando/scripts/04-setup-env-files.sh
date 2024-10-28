@@ -12,7 +12,7 @@ WEB_ENV_FILE=/app/web/.env
 LANDO_URL=`php /app/lando/scripts/get-lando-url.php`
 DASH_HOST_ENV="DASH_HOST=${LANDO_URL}";
 VITE_DASH_HOST_ENV="VITE_DASH_HOST=${LANDO_URL}";
-echo "🚀 LANDO URL: ${GREEN}${LANDO_URL}${NC}\n"
+echo "🚀 LANDO LOCAL URL: ${GREEN}${LANDO_URL}${NC}\n"
 
 if test -f "${API_ENV_FILE}"; then
   cd /app/api
