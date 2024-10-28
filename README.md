@@ -97,3 +97,9 @@ Con el siguiente comando podrá monitorear en tiempo real los eventos que sucede
 ```bash
 tail -f ~/.lando/logs/idevoldash.log
 ```
+
+## Créditos
+- [Saul Diaz](https://github.com/idevol)
+
+## License
+The MIT License (MIT). Please see [License File](LICENSE.md) for more information.
