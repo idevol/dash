@@ -87,7 +87,11 @@ lando front-build
 Con el comando `lando front-build` construirá con _Vite_ el frontend en la ruta `web/dist/` del proyecto. Este comando es un alias del comando `npm vite build` en la ruta `web/`.
 
 ### Solución de problemas
-Llega a pasar que cuando se inicia _Lando_ varias veces llega detenerse sin motivo aparente durante la contrucción del contenedor de _Docker_, mi recomendación para solucionar esté problema es borrar el cache de _Lando_ como lo indica en el siguiente enlace: [Purging Containers](https://docs.lando.dev/help/purging-containers.html).
+En _Windows_ despues de clonar el repositorio con _Git_, antes de ejecutar `lando start` defina la configuración del repositorio _Git_ ejecutando:
+```psh
+git config core.eol lf && git config core.autocrlf input
+```
+Llega a suceder que cuando se inicia _Lando_ varias veces llega detenerse sin motivo aparente durante la construcción del contenedor de _Docker_, mi recomendación para solucionar esté problema es borrar el cache de _Lando_ como lo índica en el siguiente enlace: [Purging Containers](https://docs.lando.dev/help/purging-containers.html).
 ```bash
 lando poweroff && docker system prune -a --volumes && rm -rf ~/.lando/cache
 ```
@@ -96,6 +100,10 @@ También puede hacer uso de los _logs_ de _Lando_ para poder identificar la caus
 Con el siguiente comando podrá monitorear en tiempo real los eventos que suceden al iniciar el contenedor de _Docker_ con _Lando_:
 ```bash
 tail -f ~/.lando/logs/idevoldash.log
+```
+En _Windows_ usando _PowerShell_ es con el comando:
+```psh
+Get-Content ~\.lando\logs\idevoldash.log -Wait
 ```
 
 ## Créditos
