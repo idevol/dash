@@ -4,6 +4,7 @@ COLOR='\033[0;33m' # Yellow
 NC='\033[0m' # No Color
 
 API_ENV_FILE="/app/api/.env"
+WEB_ENV_FILE="/app/web/.env"
 DB_SQLITE_FILE="/app/api/src/Db/database.sqlite"
 DB_MANAGER_FILE="/app/api/src/Application/Factory/DatabaseManagerFactory.php"
 
@@ -22,8 +23,21 @@ create_api_env(){
   fi
 }
 
+create_web_env(){
+  if [ ! -f $WEB_ENV_FILE ]; then
+    touch $WEB_ENV_FILE
+    echo "VITE_DASH_HOST=http://dash.lndo.site:8000" >> $WEB_ENV_FILE
+    echo '✅ File "web/.env" was created.'
+  fi
+}
+
 needs_api_env_explaining(){
   echo 'To run the application in any environment you need to create the file "api/.env"'
+  echo 'https://github.com/idevol/dash?tab=readme-ov-file#definici%C3%B3n-de-variables-de-entorno'
+}
+
+needs_web_env_explaining(){
+  echo 'To run the application in any environment you need to create the file "web/.env"'
   echo 'https://github.com/idevol/dash?tab=readme-ov-file#definici%C3%B3n-de-variables-de-entorno'
 }
 
@@ -69,6 +83,20 @@ else
       case $yn in
           [YySs]* ) create_api_env; break;;
           [Nn]* ) needs_api_env_explaining; break;;
+          * ) echo "Please answer: yes or no.";;
+      esac
+  done
+fi
+
+if [ -f $WEB_ENV_FILE ]; then
+  echo '✅ File "web/.env" found.'
+else
+  echo '❌ File "web/.env" not found.'
+  while true; do
+      read -p 'Do you want to generate the ".env" file inside "web/" directory? [ yes | no ] : ' yn
+      case $yn in
+          [YySs]* ) create_web_env; break;;
+          [Nn]* ) needs_web_env_explaining; break;;
           * ) echo "Please answer: yes or no.";;
       esac
   done
