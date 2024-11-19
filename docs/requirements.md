@@ -14,9 +14,9 @@ Aun no se ha probado el despliegue de la aplicación en _Windows_ utilizando [_X
 - [Composer](https://getcomposer.org/) 2.8
 
 ### Dependencias del backend
-- illuminate/database ^11.28
-- illuminate/events ^11.28
-- monolog/monolog ^3.7
+- illuminate/database ^11.32
+- illuminate/events ^11.32
+- monolog/monolog ^3.8
 - php-di/php-di ^7.0
 - pug-php/pug ^3.5
 - slim/psr7 ^1.7
@@ -26,11 +26,11 @@ Aun no se ha probado el despliegue de la aplicación en _Windows_ utilizando [_X
 
 ### Dependencias en desarrollo del backend
 - jangregor/phpstan-prophecy ^1.0.2
-- phpspec/prophecy-phpunit ^2.2
+- phpspec/prophecy-phpunit ^2.3
 - phpstan/extension-installer ^1.4
 - phpstan/phpstan ^1.12
 - phpunit/phpunit ^11.4
-- squizlabs/php_codesniffer ^3.10
+- squizlabs/php_codesniffer ^3.11
 
 ## Frontend
 - [Node](https://nodejs.org/en) 20.18
