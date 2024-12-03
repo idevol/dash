@@ -24,8 +24,8 @@
     "require": {
         "php": "^8.2",
         "ext-json": "*",
-        "illuminate/database": "^11.32",
-        "illuminate/events": "^11.32",
+        "illuminate/database": "^11.34",
+        "illuminate/events": "^11.34",
         "monolog/monolog": "^3.8",
         "php-di/php-di": "^7.0",
         "pug-php/pug": "^3.5",
