@@ -4,8 +4,8 @@
 Aun no se ha probado el despliegue de la aplicación en _Windows_ utilizando [_XAMPP_](https://www.apachefriends.org/es/) como servicio, es muy probable surjan errores en la ejecución debido a cómo _Windows_ maneja las rutas de los archivos (directory separator).
 
 ## Ambiente de desarrollo
-- [Docker](https://www.docker.com/) 4.34
-- [Lando](https://lando.dev/) 3.22
+- [Docker](https://www.docker.com/) 4.36
+- [Lando](https://lando.dev/) 3.23
 
 ## Backend
 - [Apache](https://httpd.apache.org/) 2.4
@@ -14,8 +14,8 @@ Aun no se ha probado el despliegue de la aplicación en _Windows_ utilizando [_X
 - [Composer](https://getcomposer.org/) 2.8
 
 ### Dependencias del backend
-- illuminate/database ^11.32
-- illuminate/events ^11.32
+- illuminate/database ^11.34
+- illuminate/events ^11.34
 - monolog/monolog ^3.8
 - php-di/php-di ^7.0
 - pug-php/pug ^3.5
